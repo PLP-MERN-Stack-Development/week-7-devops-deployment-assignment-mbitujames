@@ -2,7 +2,7 @@
 
 ## Project Setup
 
-This project contains a basic MERN stack application with separate frontend and backend directories.
+This project contains a full MERN stack chat application with separate frontend and backend directories.
 
 ### Backend
 
@@ -13,6 +13,11 @@ This project contains a basic MERN stack application with separate frontend and 
   - MongoDB connection with connection pooling
 - Environment variables configured via `.env` file
 - Basic error handling middleware
+- User registration and login (returns existing user if username exists)
+- Health check endpoint at `/health`
+- Socket.io integration for real-time chat
+- Support for chat rooms including general, private, and group chats
+- Typing indicators via socket.io events
 
 ### Frontend
 
@@ -20,6 +25,11 @@ This project contains a basic MERN stack application with separate frontend and 
 - Environment variables support for API URL
 - Proxy setup for API requests during development
 - Production build script included
+- User login and logout functionality
+- Real-time chat UI with message display per room
+- Room management: join, leave, create rooms
+- Typing indicators display
+- Messages update immediately upon sending
 
 ## How to Run Locally
 
@@ -38,6 +48,13 @@ This project contains a basic MERN stack application with separate frontend and 
 4. Start the React app: `npm start`
 5. To create a production build: `npm run build`
 
+## Testing
+
+- Backend tests cover API endpoints and socket.io messaging
+- Frontend tests cover login, message sending, and UI rendering
+- Backend tests require a running MongoDB test instance
+- Frontend tests currently have some network request issues; mocking recommended for full isolation
+
 ## Next Steps
 
 - Continue with Task 2 to deploy the backend to a cloud platform
@@ -54,4 +71,4 @@ This project contains a basic MERN stack application with separate frontend and 
 
 ## Notes
 
-This setup fulfills Task 1 requirements for preparing the application for deployment.
+This setup fulfills Task 1 requirements for preparing the application for deployment, including real-time chat features and testing infrastructure.
