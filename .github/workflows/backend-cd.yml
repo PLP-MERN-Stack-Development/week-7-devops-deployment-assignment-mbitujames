@@ -1,0 +1,29 @@
+name: Backend CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: |
+        cd backend
+        npm install
+
+    - name: Deploy to Render
+      env:
+        RENDER_API_KEY: \${{ secrets.RENDER_API_KEY }}
+      run: |
+        # Example deploy command using Render CLI or API
+        echo "Deploying backend to Render..."
+        # Add actual deploy commands here
